@@ -1,0 +1,19 @@
+#[inspiration]
+#command=awk "NR==($(date +%s) % $(wc -l < ~/.config/imp.txt) + 1)" ~/.config/quotes.txt
+#interval=600
+
+[wifi]
+command=nmcli -t -f WIFI g | grep -q "enabled" && echo 1 || echo 0
+interval=6
+
+[picomdetect]
+command=pgrep -x picom > /dev/null && echo 1 || echo 0
+interval=30
+
+[clock]
+command=date '+%Y-%m-%d %H:%M:%S'
+interval=1
+
+[battery]
+command=bash -c 's=$(acpi -b); echo $(if [[ $s == *"Charging"* ]]; then echo 1; else echo 0; fi) \| $(echo $s | grep -oP "\d+%" | tr -d "%")'
+interval=30
