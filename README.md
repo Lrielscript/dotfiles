@@ -16,3 +16,4 @@ It needs:
 - cava
 
 This is my first config I have built for i3. Please treat it as such.
+wallpaper: https://ibb.co/HpXrV250
