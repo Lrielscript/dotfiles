@@ -1,2 +1,2 @@
 # dotfiles
-my dotfiles for i3 anyone can use or modify. 
+My dotfiles for i3 anyone can use or modify.
