@@ -6,7 +6,6 @@ It has:
 - A good color scheme
 - Built in keybinds
 - Picom config with rounded corners
-- A free background
 - i3blocks config
 
 It needs:
