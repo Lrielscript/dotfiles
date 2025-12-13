@@ -1,6 +1,6 @@
-# ====================
+# =================
 # Execute on start
-# ====================
+# =================
 
 # Autotiling
 exec_always --no-startup-id autotiling
@@ -10,13 +10,12 @@ exec_always --no-startup-id autotiling
 
 # Background for your desktop with feh
 # exec_always feh --bg-fill /path/to/image
-
 # Set the mod key to Mod1 (Alt)
 set $mod Mod1
 
-# ====================
+# =================
 # i3 Reload & Exit
-# ====================
+# =================
 
 # Reload i3 config
 bindsym $mod+Shift+R reload
@@ -27,9 +26,9 @@ bindsym $mod+Shift+E restart
 # Exit i3
 bindsym $mod+Shift+Q exit
 
-# ===============================
+# ================================
 # Application Launchers / Killers
-# ===============================
+# ================================
 
 # Rofi
 bindsym $mod+space exec rofi -show drun
@@ -39,6 +38,9 @@ bindsym $mod+Return exec alacritty
 
 # xkill
 bindsym $mod+K exec xkill
+
+# xeyes
+bindsym $mod+X exec xeyes
 
 # ====================
 # Window Management
@@ -62,18 +64,24 @@ bindsym $mod+Shift+Right move right
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Down move down
 
+# Resize windows
+bindsym $mod+Ctrl+Left  resize shrink width 5 px 
+bindsym $mod+Ctrl+Right resize grow   width 5 px 
+bindsym $mod+Ctrl+Up    resize grow   height 5 px 
+bindsym $mod+Ctrl+Down  resize shrink height 5 px 
+
 # Toggle fullscreen and floating
 bindsym $mod+f fullscreen
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+q kill
 
 # Window GAPS (to see background + looks cooler)
+gaps outer 2
 gaps inner 10
-gaps outer 10
 
-# ============================
+# =============================
 # Audio Managment & Brightness
-# ============================
+# =============================
 
 # Increase brightness
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
@@ -85,30 +93,30 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
 bindsym XF86AudioRaiseVolume exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
 bindsym XF86AudioLowerVolume exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
 
-# ===========
+# ============
 # iblocks bar
-# ===========
+# ============
   
 bar {
     status_command i3blocks
     position top
 
-    font pango:Noto Sans 10
+    font pango:Unifont 15
 
     colors {
-        background #1a1f2b
-        statusline #c0d0ff
-        separator #506080
+        background #000000
+        statusline #00ff00
+        separator #00ff00
 
-        focused_workspace  #61afef #1a1f2b #61afef
-        inactive_workspace #3b4261 #1a1f2b #3b4261
-        urgent_workspace   #ffffff #1a1f2b #f78c6c
+        focused_workspace  #000000 #00ff00 #000000
+        inactive_workspace #00ff00 #000000 #00ff00
+        urgent_workspace   #ffffff #00ff00 #ffffff
     }
 }
 
-# ==========
+# ===========
 # Workspaces
-# ==========
+# ===========
 
 # Define Workspaces
 set $ws1 "1"
@@ -122,9 +130,9 @@ bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
 bindsym $mod+e workspace $ws4
 
-# ==========
+# ===========
 # Screenshot
-# ==========
+# ===========
 
 # Launch Flameshot to screenshot
 bindsym $mod+s exec flameshot gui
@@ -133,7 +141,9 @@ bindsym $mod+s exec flameshot gui
 # Windows theming
 # ================
 
-client.focused          #61afef #1a1f2b #61afef #ffffff #c0d0ff
-client.unfocused        #3b4261 #1a1f2b #3b4261 #a0b0d0 #7f9fcf
-client.urgent           #f78c6c #1a1f2b #f78c6c #ffffff #f78c6c
-client.focused_inactive #506080 #1a1f2b #506080 #c0d0ff #7f9fcf
+client.focused          #00ff00 #000000 #00ff00 #00ff00 #00ff00
+client.unfocused        #000000 #000000 #00ff00 #000000 #000000
+client.urgent           #000000 #000000 #00ff00 #000000 #000000
+client.focused_inactive #000000 #000000 #00ff00 #000000 #000000
+
+font pango:unifont 15
