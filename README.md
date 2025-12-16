@@ -13,7 +13,7 @@ It has:
 
 Debian required: `sudo apt install i3 i3blocks rofi`
 
-Debian optionals 'sudo apt install picom cava btop'
+Debian optionals `sudo apt install picom cava btop`
 
 
 # Display Managers
