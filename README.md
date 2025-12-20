@@ -1,3 +1,7 @@
+# WARNING
+I sadly am no longer maintaining these as much as my SWAY config files.
+
+
 # dotfiles
 My dotfiles for i3 **anyone** can use or modify.
 
