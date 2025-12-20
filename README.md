@@ -1,24 +1,5 @@
-# WARNING
-I sadly am no longer maintaining these as much as my SWAY config files.
-
-
 # dotfiles
-My dotfiles for i3 **anyone** can use or modify.
-
-It has:
-
-- A good color scheme
-- Built in keybinds
-- Picom config with rounded corners
-- i3blocks config
-
-
-# Dependencies
-
-Debian required: `sudo apt install i3 i3blocks rofi`
-
-Debian optionals `sudo apt install picom cava btop`
-
+My dotfiles for sway **anyone** can use or modify.
 
 # Display Managers
 
