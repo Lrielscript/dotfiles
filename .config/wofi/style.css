@@ -1,0 +1,42 @@
+/* theme for wofi */
+#window {
+    background-color: #000000;
+    border: 2px solid #00ff00;
+    font-size: 1.6rem;
+    font-family: unifont;
+}
+
+#input {
+    background-color: #000000;
+    color: #00ff00;
+    border: 2px solid #00ff00;
+    padding: 0.8rem 1rem;
+    font-size: 1.5rem;
+    border-radius: 0;
+}
+
+#scroll {
+    margin: 3px 5px 6px 5px;
+}
+
+#entry {
+    color: #00ff00;
+    background-color: #000000;
+    padding: 0.6rem 1rem;
+}
+
+#img {
+    width: 1rem;
+    margin-right: 1rem;
+}
+
+#entry:selected {
+    color: #000000;
+    background-color: #00ff00;
+    outline: none;
+}
+
+#text:selected {
+    color: #000000;
+    font-weight: 700;
+}
