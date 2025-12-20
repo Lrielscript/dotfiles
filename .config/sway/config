@@ -1,0 +1,149 @@
+# =================
+# Execute on start
+# =================
+
+# Autotiling
+exec_always --no-startup-id autotiling
+
+# Picom COMPOSITING (OPTIONAL)
+# exec_always --no-startup-id picom
+
+# Background for your desktop with feh
+# exec_always feh --bg-fill /path/to/image
+# Set the mod key to Mod1 (Alt)
+set $mod Mod1
+
+# =================
+# i3 Reload & Exit
+# =================
+
+# Reload i3 config
+bindsym $mod+Shift+R reload
+
+# Restart i3
+bindsym $mod+Shift+E restart
+
+# Exit i3
+bindsym $mod+Shift+Q exit
+
+# ================================
+# Application Launchers / Killers
+# ================================
+
+# Rofi
+bindsym $mod+space exec rofi -show drun
+
+# Open terminal
+bindsym $mod+Return exec alacritty
+
+# xkill
+bindsym $mod+K exec xkill
+
+# xeyes
+bindsym $mod+X exec xeyes
+
+# ====================
+# Window Management
+# ====================
+
+# Split windows horizontally
+bindsym $mod+h split h
+
+# Split windows vertically
+bindsym $mod+v split v
+
+# Focus windows
+bindsym $mod+Left focus left
+bindsym $mod+Right focus right
+bindsym $mod+Up focus up
+bindsym $mod+Down focus down
+
+# Move windows
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Down move down
+
+# Resize windows
+bindsym $mod+Ctrl+Left  resize shrink width 5 px 
+bindsym $mod+Ctrl+Right resize grow   width 5 px 
+bindsym $mod+Ctrl+Up    resize grow   height 5 px 
+bindsym $mod+Ctrl+Down  resize shrink height 5 px 
+
+# Toggle fullscreen and floating
+bindsym $mod+f fullscreen
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+q kill
+
+# Window GAPS (to see background + looks cooler)
+gaps outer 2
+gaps inner 10
+
+# =============================
+# Audio Managment & Brightness
+# =============================
+
+# Increase brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
+# Decrease brightness
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
+
+# --- AUDIO CONTROL (PipeWire wpctl) ---
+# Volume up/down
+bindsym XF86AudioRaiseVolume exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
+bindsym XF86AudioLowerVolume exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+
+# ============
+# iblocks bar
+# ============
+  
+bar {
+    status_command i3blocks
+    position top
+
+    font pango:Unifont 15
+
+    colors {
+        background #000000
+        statusline #00ff00
+        separator #00ff00
+
+        focused_workspace  #000000 #00ff00 #000000
+        inactive_workspace #00ff00 #000000 #00ff00
+        urgent_workspace   #ffffff #00ff00 #ffffff
+    }
+}
+
+# ===========
+# Workspaces
+# ===========
+
+# Define Workspaces
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "e"
+
+# Assign the workspaces to specific keys
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+e workspace $ws4
+
+# ===========
+# Screenshot
+# ===========
+
+# Launch Flameshot to screenshot
+bindsym $mod+s exec flameshot gui
+
+# ================
+# Windows theming
+# ================
+
+client.focused          #00ff00 #000000 #00ff00 #00ff00 #00ff00
+client.unfocused        #000000 #000000 #00ff00 #000000 #000000
+client.urgent           #000000 #000000 #00ff00 #000000 #000000
+client.focused_inactive #000000 #000000 #00ff00 #000000 #000000
+
+font pango:unifont 15
