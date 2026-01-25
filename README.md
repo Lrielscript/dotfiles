@@ -1,3 +1,5 @@
+DISCLAIMER: This isn't meant to work for you. Sorry. Feel free to use this, but it is mainly designed for my machine, and my preferences.
+
 # dotfiles
 My dotfiles for sway **anyone** can use or modify.
 
