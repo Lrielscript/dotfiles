@@ -1,0 +1,66 @@
+/* Pull colors from pywal */
+@import url("/home/user/.cache/wal/colors-waybar.css");
+
+/* Global */
+* {
+    border: none;
+    border-radius: 0px; /* square */
+    font-family: unifont;
+    font-size: 32px;
+    min-height: 24px;
+}
+
+/* Bar */
+window#waybar {
+    background: @background;
+    color: @foreground;
+}
+
+/* Modules */
+#workspaces,
+#window,
+#clock,
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#battery,
+#tray {
+    background: @color0;
+    padding: 0 8px;
+    margin: 3px 2px;
+}
+
+/* Workspaces */
+#workspaces button {
+    padding: 0 6px;
+    background: transparent;
+    color: @foreground;
+}
+
+#workspaces button.focused {
+    background: @color5;
+    color: @background;
+}
+
+#workspaces button.urgent {
+    background: @color2;
+    color: @background;
+}
+
+/* Clock stands out slightly */
+#clock {
+    background: @color4;
+    color: @background;
+}
+
+/* Battery warnings */
+#battery.warning {
+    background: @color3;
+    color: @background;
+}
+
+#battery.critical {
+    background: @color1;
+    color: @background;
+}
