@@ -1,0 +1,5 @@
+
+@theme "~/.cache/wal/colors-rofi-light.rasi"
+* {
+	font: "Unifont 15";
+}
